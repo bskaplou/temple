@@ -252,6 +252,8 @@
             var preffixified_const_parts = add_preffixes(const_parts, classes_namespace, no_modify_regex);
 
             attr_set_code = node_var_name + '.className = ' + preffixified_const_parts.join('+').replace(/"\+"/g, "");
+          } else if(buff[0][2] == 'xlink:href') {
+            attr_update_code = node_var_name + '.setAttributeNS("http://www.w3.org/1999/xlink" ,"href",' + parts.join('+') + ')';
           } else {
             attr_update_code = node_var_name + '.setAttribute("' + buff[0][2] + '",' + parts.join('+') + ')';
 
