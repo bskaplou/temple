@@ -17,7 +17,7 @@
     return a;
   }
   function esc(s) {
-    return s.replace(/"/g, '\\"').replace(/\n/g, '\\n');
+    return s.replace(/"/g, '\\"').replace(/\n/g, '\\n').replace(/\r/g, '');
   }
 
   var svg_elements = [
