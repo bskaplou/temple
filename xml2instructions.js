@@ -7,6 +7,7 @@
 
   function node(template_id, parent_id, n, emit) {
     function attribute(name, value, parent_id) {
+      if(name.startsWith('xmlns'))return;
       if (value.indexOf('{{') != -1) {
         var chunks = value.split('{{');
 
